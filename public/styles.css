@@ -1,0 +1,294 @@
+:root {
+    --a: hsl(187, 72%, 88%);
+    --b: hsl(192, 68%, 78%);
+    --c: hsl(193, 74%, 69%);
+    --d: hsl(190, 100%, 45%);
+    --e: hsl(192, 100%, 43%);
+    --violet: hsl(259, 54%, 79%);
+    --yellow: hsl(55, 100%, 71%);
+    --pink: hsl(331, 100%, 90%);
+    --blue: hsl(192, 68%, 78%);
+    --green: hsl(103, 70%, 79%);
+    --darkBlue: hsl(213, 100%, 36%);
+    --white: hsl(331, 100%, 94%);
+}
+
+body {
+    font-family: 'Nunito';
+}
+
+.app {
+    display: grid;
+    gap: 24px;
+    justify-items: center;
+    padding: 24px;
+}
+
+.title {
+    font-size: 16px;
+}
+
+.section {
+    display: grid;
+    gap: 36px;
+    padding: 48px;
+    grid-template-columns: 1fr 1fr;
+    width: 640px;
+    background-color: hsl(210, 95%, 99%);
+    border-radius: 12px;
+}
+
+.gridExample {
+    width: 240px;
+    height: 240px;
+}
+/* -------------------------------------------------- */
+.gridA {
+    display: grid;
+}
+
+.gridAChildA { background-color: var(--a); }
+/* -------------------------------------------------- */
+.gridB {
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+}
+
+.gridBChildA { background-color: var(--a); }
+.gridBChildB { background-color: var(--b); }
+/* -------------------------------------------------- */
+.gridC {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+}
+
+.gridCChildA { background-color: var(--a); }
+.gridCChildB { background-color: var(--b); }
+.gridCChildC { background-color: var(--c); }
+.gridCChildD { background-color: var(--d); }
+/* -------------------------------------------------- */
+.gridD {
+    display: grid;
+    grid-template-rows: 48px auto;
+}
+
+.gridDChildA { background-color: var(--a); }
+.gridDChildB { background-color: var(--b); }
+/* -------------------------------------------------- */
+.gridE {
+    display: grid;
+    grid-template-columns: 80px auto;
+    grid-template-rows: 48px auto;
+    grid-template-areas:
+        "header header"
+        "sidebar content"
+    ;
+}
+
+.gridEChildA {
+    background-color: var(--a);
+    grid-area: header;
+}
+
+.gridEChildB {
+    background-color: var(--b);
+    grid-area: sidebar;
+}
+
+.gridEChildC {
+    background-color: var(--c);
+    grid-area: content;
+}
+/* -------------------------------------------------- */
+.gridF {
+    background-color: var(--c);
+    display: grid;
+    grid-template-columns: repeat(3, 80px);
+    grid-template-rows: repeat(4, 60px);
+    grid-template-areas:
+        "v v v"
+        "w w contentA"
+        "x contentB y"
+        "z z z"
+;
+}
+
+.gridFChildA { grid-area: contentA; }
+
+.gridFChildB { grid-area: contentB; }
+/* -------------------------------------------------- */
+.gridG {
+    background-color: var(--pink);
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+/* -------------------------------------------------- */
+.gridH {
+    background-color: var(--pink);
+    display: grid;
+    grid-template-columns: 1fr;
+    justify-items: center;
+}
+
+.gridHChild {
+    justify-self: end;
+}
+/* -------------------------------------------------- */
+.gridI {
+    background-color: var(--violet);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+/* -------------------------------------------------- */
+.gridJ {
+    background-color: var(--violet);
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    align-items: center;
+}
+
+.gridJChild {
+    align-self: end;
+}
+/* -------------------------------------------------- */
+.gridK {
+    background-color: var(--a);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "a b"
+        "c d"
+    ;
+}
+
+.gridKChildA {
+    grid-area: a;
+    justify-self: end;
+    align-self: end;
+}
+
+.gridKChildB {
+    background-color: var(--b);
+    grid-area: b;
+}
+
+.gridKChildC {
+    background-color: var(--b);
+    grid-area: c;
+}
+/* -------------------------------------------------- */
+.gridL {
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "a b"
+        "c d"
+    ;
+}
+
+.gridLBunny {
+    background-color: var(--violet);
+    grid-area: a;
+    justify-self: end;
+    align-self: end;
+}
+
+.gridLFlower {
+    background-color: var(--violet);
+    grid-area: b;
+
+}
+
+.gridLStar {
+    background-color: var(--violet);
+    grid-area: c;
+}
+
+.gridLStrawberry {
+    background-color: var(--violet);
+    grid-area: d;
+    justify-self: end;
+    align-self: start;
+}
+/* -------------------------------------------------- */
+.gridM {
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "a b"
+        "c d"
+    ;
+    justify-items: center;
+    align-items: center;
+}
+
+.gridMBunny {
+    background-color: var(--violet);
+    grid-area: a;
+}
+
+.gridMFlower {
+    background-color: var(--violet);
+    grid-area: b;
+
+}
+
+.gridMStar {
+    background-color: var(--violet);
+    grid-area: c;
+}
+
+.gridMStrawberry {
+    background-color: var(--violet);
+    grid-area: d;
+}
+/* -------------------------------------------------- */
+.gridN {
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "a b"
+        "c d"
+;
+    justify-items: center;
+    align-items: center;
+}
+
+.gridNFlower {
+    background-color: var(--violet);
+    grid-area: b;
+}
+/* -------------------------------------------------- */
+.gridO {
+    background-color: var(--white);
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-template-rows: repeat(2, 1fr);
+    grid-template-areas:
+        "a b"
+        "c d"
+    ;
+}
+
+.gridOFlowerContainer {
+    background-color: var(--violet);
+    grid-area: b;
+    display: grid;
+}
+
+.gridOFlower {
+    /* no bg colour so doesn't look like it shrunk */
+    /* but it shrunk */
+    justify-self: center;
+    align-self: center;
+}
